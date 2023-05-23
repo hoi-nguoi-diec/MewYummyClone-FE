@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './component/product/product.component';
 import { LoginComponent } from './auth/login/login.component';
 import { IndexComponent } from './component/index/index.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     LoginComponent,
-    IndexComponent
+    IndexComponent,
+    AddToCartComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
