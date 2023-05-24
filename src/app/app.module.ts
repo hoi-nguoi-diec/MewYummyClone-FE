@@ -5,11 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './component/product/product.component';
+import { ProductComponent } from './pages/product/product.component';
 import { LoginComponent } from './auth/login/login.component';
-import { IndexComponent } from './component/index/index.component';
+import { IndexComponent } from './pages/index/index.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
+import { AddToCartComponent } from './component/add-to-cart/add-to-cart.component';
 import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ProductPageComponent } from './admin/product-page/product-page.component';

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductComponent } from './component/product/product.component';
+import { ProductComponent } from './pages/product/product.component';
 import { LoginComponent } from './auth/login/login.component';
-import { IndexComponent } from './component/index/index.component';
+import { IndexComponent } from './pages/index/index.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
+import { AddToCartComponent } from './component/add-to-cart/add-to-cart.component';
 const routes: Routes = [
   {path: '' , component: LayoutPageComponent, children: [
     {path: '', redirectTo: 'index', pathMatch: 'full'},
