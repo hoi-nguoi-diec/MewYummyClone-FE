@@ -18,6 +18,7 @@ import { AddCategoryPageComponent } from './admin/add-category-page/add-category
 import { AddProductPageComponent } from './admin/add-product-page/add-product-page.component';
 import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
 import { UpdateCategoryPageComponent } from './admin/update-category-page/update-category-page.component';
+import { LayoutPageComponent } from './layout/layout-page/layout-page.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { UpdateCategoryPageComponent } from './admin/update-category-page/update
     AddProductPageComponent,
     UpdateProductPageComponent,
     UpdateCategoryPageComponent,
+    LayoutPageComponent,
   ],
   imports: [
     BrowserModule,

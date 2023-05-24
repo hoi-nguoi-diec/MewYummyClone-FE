@@ -6,11 +6,15 @@ import { IndexComponent } from './component/index/index.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 const routes: Routes = [
-  {path: '' , component: IndexComponent},
-  {path: 'products' , component: ProductComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'cart', component:AddToCartComponent},
-  {path:'products1', component:ProductDetailComponent},
+  {path: '' , component: LayoutPageComponent, children: [
+    {path: '', redirectTo: 'index', pathMatch: 'full'},
+    {path: 'index', component: IndexComponent },
+    {path: 'products' , component: ProductComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'cart', component:AddToCartComponent},
+    {path:'products1', component:ProductDetailComponent},
+  ]},
+ 
   { path: 'admin', component: LayoutAdminComponent, children: [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     { path: 'dashboard', component: DashboardComponent},
@@ -31,6 +35,7 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
 import { CategoryPageComponent } from './admin/category-page/category-page.component';
 import { AddCategoryPageComponent } from './admin/add-category-page/add-category-page.component';
 import { UpdateCategoryPageComponent } from './admin/update-category-page/update-category-page.component';
+import { LayoutPageComponent } from './layout/layout-page/layout-page.component';
 
 
 @NgModule({
