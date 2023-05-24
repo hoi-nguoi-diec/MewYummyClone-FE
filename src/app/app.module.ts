@@ -10,6 +10,15 @@ import { LoginComponent } from './auth/login/login.component';
 import { IndexComponent } from './component/index/index.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
+import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ProductPageComponent } from './admin/product-page/product-page.component';
+import { CategoryPageComponent } from './admin/category-page/category-page.component';
+import { AddCategoryPageComponent } from './admin/add-category-page/add-category-page.component';
+import { AddProductPageComponent } from './admin/add-product-page/add-product-page.component';
+import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
+import { UpdateCategoryPageComponent } from './admin/update-category-page/update-category-page.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +27,15 @@ import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
     LoginComponent,
     IndexComponent,
     AddToCartComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LayoutAdminComponent,
+    DashboardComponent,
+    ProductPageComponent,
+    CategoryPageComponent,
+    AddCategoryPageComponent,
+    AddProductPageComponent,
+    UpdateProductPageComponent,
+    UpdateCategoryPageComponent,
   ],
   imports: [
     BrowserModule,
