@@ -1,24 +1,21 @@
 <h1 class="mb-5">List Category</h1>
+<button type="submit" class="mb-5 rounded p-2 bg-primary text-light border-0"><a href="" routerLink="addd" class="text-light text-decoration-none">Add category</a></button>
 <table class="table table-bordered">
     <thead>
       <tr>
         <th>#</th>
-        <th>Image</th>
         <th>Name</th>
-        <th>Price</th>
-        <th></th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th>1</th>
-        <th><img src="https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA" alt="" width="100"></th>
-        <th>Product A</th>
-        <th>100</th>
-        <th>
-            <button class="mx-2 my-3">Remove</button>
-            <button class="mx-2 my-3">update</button>
-        </th>
+        <td>1</td>
+        <td>Product A</td>
+        <td class="d-flex">
+          <button class="mx-3 my-3 bg-primary text-light rounded border-0 p-2"><a href="" routerLink="editt" class="text-light text-decoration-none">Update</a></button>
+          <button class="mx-2 my-3 bg-danger text-light rounded border-0">Remove</button>
+        </td>
       </tr>
     </tbody>
   </table>
