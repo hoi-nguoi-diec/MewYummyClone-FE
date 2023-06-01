@@ -15,4 +15,7 @@ export class ProductService {
   deleteProduct(_id: number| string): Observable<IProduct>{
     return this.http.delete<IProduct>(`${this.API_URL}/products/`+_id)
   }
+  addProduct(product:IProduct):Observable<IProduct>{
+    return this.http.post<IProduct>(`${this.API_URL}/products`, product)
+  }
 }

@@ -1,8 +1,6 @@
 <h1 class="mb-5">List Product</h1>
 <button type="submit" class="mb-5 rounded p-2 bg-primary text-light border-0"><a href="" routerLink="add" class="text-light text-decoration-none">Add product</a></button>
 
-<router-outlet />
-
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -15,16 +13,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
-      <th>{{product._id}}</th>
-      <th><img src="{{product.image}}" alt="" width="100"></th>
-      <th>{{product.name}}</th>
-      <th>{{product.price}}</th>
-      <th>{{product.description}}</th>
-      <th>
-          <button (click)="onHandleRemove(product._id)" class="mx-2 my-3 btn btn-danger">Remove</button>
-          <button class="mx-2 my-3 btn btn-primary">update</button>
-      </th>
+    <tr
+    app-product-item 
+    *ngFor="let product of products;let i = index"
+    [product]="product"
+    [index] = "i"
+    (onRemove) = "onHandleRemove($event)">
     </tr>
   </tbody>
 </table>

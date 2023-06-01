@@ -1,20 +1,20 @@
 <h1 class="mb-5">Add product</h1>
-<form>
+<form [formGroup]="productForm" class="form-group" (ngSubmit)="onHandleAdd()">
     <div class="mb-3">
         <label class="form-label">Name</label>
-        <input type="email" class="form-control">
+        <input type="text" class="form-control" formControlName="name">
       </div>
       <div class="mb-3">
-        <label class="form-label">price</label>
-        <input type="password" class="form-control" >
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="price">
       </div>
       <div class="mb-3">
-        <label class="form-label">description</label>
-        <input type="text" class="form-control" >
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="description">
       </div>
       <div class="mb-3">
-        <label class="form-label">image</label>
-        <input type="file" class="form-control" >
+        <label class="form-label">Image</label>
+        <input type="file" class="form-control" (change)="onImageSelected($event)" accept="image/*">
       </div>
       <div class="mb-3">
         <label class="form-label">Category</label>
