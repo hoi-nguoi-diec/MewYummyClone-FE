@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductComponent } from './pages/product/product.component';
-import { LoginComponent } from './auth/login/login.component';
-import { IndexComponent } from './pages/index/index.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { AddToCartComponent } from './component/add-to-cart/add-to-cart.component';
+
+
 const routes: Routes = [
   {path: '' , component: LayoutPageComponent, children: [
     {path: '', redirectTo: 'index', pathMatch: 'full'},
@@ -36,6 +33,11 @@ import { CategoryPageComponent } from './admin/category-page/category-page.compo
 import { AddCategoryPageComponent } from './admin/add-category-page/add-category-page.component';
 import { UpdateCategoryPageComponent } from './admin/update-category-page/update-category-page.component';
 import { LayoutPageComponent } from './layout/layout-page/layout-page.component';
+import { IndexComponent } from './pages/index/index.component';
+import { ProductComponent } from './pages/product/product.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AddToCartComponent } from './component/add-to-cart/add-to-cart.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 @NgModule({

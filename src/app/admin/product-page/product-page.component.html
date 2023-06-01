@@ -15,18 +15,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td class=""><img
-          src="https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA"
-          alt="" width="100"></td>
-      <td>Product A</td>
-      <td>100</td>
-      <td>ABC</td>
-      <td class="d-flex">
-        <button class="mx-3 my-3 bg-primary text-light rounded border-0 p-2"><a href="" routerLink="edit" class="text-light text-decoration-none">Update</a></button>
-        <button class="mx-2 my-3 bg-danger text-light rounded border-0">Remove</button>
-      </td>
+    <tr *ngFor="let product of products">
+      <th>{{product._id}}</th>
+      <th><img src="{{product.image}}" alt="" width="100"></th>
+      <th>{{product.name}}</th>
+      <th>{{product.price}}</th>
+      <th>{{product.description}}</th>
+      <th>
+          <button (click)="onHandleRemove(product._id)" class="mx-2 my-3 btn btn-danger">Remove</button>
+          <button class="mx-2 my-3 btn btn-primary">update</button>
+      </th>
     </tr>
   </tbody>
 </table>
