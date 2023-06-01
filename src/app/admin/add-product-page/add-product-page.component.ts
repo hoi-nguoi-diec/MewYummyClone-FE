@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AddProductPageComponent {
   product!:IProduct
   selectedImage: File | null = null;
-  constructor(private fb:FormBuilder, private productService:ProductService, private router: Router){
+  constructor(private fb:FormBuilder, private productService:ProductService, private routers: Router){
 
   }
 
@@ -19,6 +19,7 @@ export class AddProductPageComponent {
     name: [''],
     price: 0,
     description: [''],
+    image: ''
   })
   onHandleAdd(){
     if (this.productForm.valid) {
@@ -30,7 +31,7 @@ export class AddProductPageComponent {
       }
       this.productService.addProduct(product).subscribe(data => {
         console.log(data);
-        
+        this.routers.navigate(['admin/products'])
         })
   }
 }

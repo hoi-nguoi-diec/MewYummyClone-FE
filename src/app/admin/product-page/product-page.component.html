@@ -15,10 +15,12 @@
   <tbody>
     <tr
     app-product-item 
-    *ngFor="let product of products;let i = index"
+    *ngFor="let product of products | paginate: {itemsPerPage: 10, currentPage: p };let i = index"
     [product]="product"
     [index] = "i"
     (onRemove) = "onHandleRemove($event)">
     </tr>
+   
   </tbody>
 </table>
+<pagination-controls (pageChange)="p =$event"></pagination-controls>

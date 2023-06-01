@@ -15,12 +15,12 @@ const routes: Routes = [
   { path: 'admin', component: LayoutAdminComponent, children: [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     { path: 'dashboard', component: DashboardComponent},
-    { path: 'product', component: ProductPageComponent},
-    { path: 'product/add', component: AddProductPageComponent},
-    { path: 'product/edit', component: UpdateProductPageComponent},
-    { path: 'category', component: CategoryPageComponent},
-    { path: 'category/addd', component: AddCategoryPageComponent},
-    { path: 'category/editt', component: UpdateCategoryPageComponent},
+    { path: 'products', component: ProductPageComponent},
+    { path: 'products/add', component: AddProductPageComponent},
+    { path: 'products/edit', component: UpdateProductPageComponent},
+    { path: 'categories', component: CategoryPageComponent},
+    { path: 'categories/add', component: AddCategoryPageComponent},
+    { path: 'categories/edit', component: UpdateCategoryPageComponent},
   ]}
 ]
 

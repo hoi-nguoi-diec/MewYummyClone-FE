@@ -11,6 +11,7 @@ export class ProductPageComponent {
   products: IProduct[] =[]
   product!:IProduct
   
+  p=1
   // currentPage = 1;
   // pageSize = 10;
   // get pagedProducts(): IProduct[] {
