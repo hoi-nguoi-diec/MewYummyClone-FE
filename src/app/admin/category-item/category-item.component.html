@@ -1,0 +1,7 @@
+
+<td>{{index + 1}}</td>
+<td>{{category.name}}</td>
+<td class="d-flex">
+  <button class="mx-3 my-3 bg-primary text-light rounded border-0 p-2"><a href="" routerLink="editt" class="text-light text-decoration-none">Update</a></button>
+  <button class="mx-2 my-3 bg-danger text-light rounded border-0" (click)="removeItem(category._id)" >Remove</button>
+</td>

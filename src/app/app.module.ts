@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import { AddProductPageComponent } from './admin/add-product-page/add-product-pa
 import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
 import { UpdateCategoryPageComponent } from './admin/update-category-page/update-category-page.component';
 import { LayoutPageComponent } from './layout/layout-page/layout-page.component';
+import { CategoryItemComponent } from './admin/category-item/category-item.component';
 
 
 @NgModule({
@@ -38,10 +40,13 @@ import { LayoutPageComponent } from './layout/layout-page/layout-page.component'
     UpdateProductPageComponent,
     UpdateCategoryPageComponent,
     LayoutPageComponent,
+    CategoryItemComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
