@@ -1,59 +1,53 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from 'src/app/interface/product';
+import { IData, IProduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-update-product-page',
   templateUrl: './update-product-page.component.html',
-  styleUrls: ['./update-product-page.component.scss']
+  styleUrls: ['./update-product-page.component.scss'],
 })
 export class UpdateProductPageComponent {
-  product!: IProduct
+  product!: IProduct;
+  
+  constructor(
+    private fb: FormBuilder,
+    private productService: ProductService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.route.paramMap.subscribe((param) => {
+      const _id = param.get('id');
+      this.productService.getOne(_id).subscribe((product) => {
+        this.product = product;
+
+        this.productForm.patchValue({
+          name: product.data?.name,
+          price: product.data?.price,
+          description: product.data?.description,
+        });
+      });
+    });
+  }
   productForm = this.fb.group({
     name: [''],
     price: 0,
     description: [''],
-    image: ''
-  })
-  selectedImage: File | null = null;
-
-  constructor(private fb: FormBuilder, private productService: ProductService, private route: ActivatedRoute, private routees: Router) {
-    this.route.paramMap.subscribe(param => {
-      const _id = param.get('id');
-      this.productService.getProduct(_id).subscribe(product => {
-        // Sản phẩm dựa theo ID
-        this.product = product;
-
-        this.productForm.patchValue({
-          name: product.name,
-          price: product.price,
-          description: product.description,
-        })
-      })
-    })
-  }
-
-  
+  });
   onHandleEdit() {
     if (this.productForm.valid) {
       const product: IProduct = {
         _id: this.product._id,
-        name: this.productForm.value.name || "",
+        name: this.productForm.value.name || '',
         price: this.productForm.value.price || 0,
-        description: this.productForm.value.description || "",
-        image: this.selectedImage?.name
-      }
-      this.productService.editProduct(product).subscribe(data => {
+        description: this.productForm.value.description || '',
+      };
+      this.productService.editProduct(product).subscribe((data) => {
         console.log(data);
-        this.routees.navigate(['admin/products'])
-      })
-    }
-  }
-  onImageSelected(event: any) {
-    if (event.target.files && event.target.files.length > 0) {
-      this.selectedImage = event.target.files[0];
+        this.router.navigate(['admin/products']);
+      });
     }
   }
 }
