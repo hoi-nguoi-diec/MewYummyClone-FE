@@ -15,7 +15,7 @@ export class ProductItemComponent {
   onHandleRemove(id:any){
     this.onRemove.emit(id)
   }
-  updateItem(id:any){
+  onHandleEdit(id:any){
     this.onUpdate.emit(id)
   }
 }

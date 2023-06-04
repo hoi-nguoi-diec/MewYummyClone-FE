@@ -5,5 +5,5 @@
       <td><img src="{{product.image}}" alt="" width="50px"></td>
       <td class="d-flex">
           <button (click)="onHandleRemove(product._id)" class="mx-2 my-3 btn btn-danger">Remove</button>
-          <button class="mx-2 my-3 btn btn-primary">update</button>
+          <a routerLink='{{product._id}}/edit' (click)="onHandleEdit(product._id)" class="mx-2 my-3 btn btn-primary">update</a>
       </td>
