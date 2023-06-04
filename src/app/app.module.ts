@@ -22,7 +22,7 @@ import { UpdateCategoryPageComponent } from './admin/update-category-page/update
 import { LayoutPageComponent } from './layout/layout-page/layout-page.component';
 import { CategoryItemComponent } from './admin/category-item/category-item.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-import { ProductItemComponent } from './admin/product-item/product-item.component';
+import { ProductItemComponent } from './component/product-item/product-item.component';
 
 
 
