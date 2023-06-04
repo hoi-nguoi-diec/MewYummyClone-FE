@@ -3,6 +3,7 @@ import { IProduct } from 'src/app/interface/product';
 import { FormBuilder,Validators,FormControl, FormGroup } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
+import { ICategory } from 'src/app/interface/category';
 @Component({
   selector: 'app-add-product-page',
   templateUrl: './add-product-page.component.html',

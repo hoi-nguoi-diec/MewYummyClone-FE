@@ -17,10 +17,10 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent},
     { path: 'products', component: ProductPageComponent},
     { path: 'products/add', component: AddProductPageComponent},
-    { path: 'products/edit', component: UpdateProductPageComponent},
+    { path: 'products/edit/:id', component: UpdateProductPageComponent},
     { path: 'categories', component: CategoryPageComponent},
     { path: 'categories/add', component: AddCategoryPageComponent},
-    { path: 'categories/edit', component: UpdateCategoryPageComponent},
+    { path: 'categories/:id/edit', component: UpdateCategoryPageComponent},
   ]}
 ]
 

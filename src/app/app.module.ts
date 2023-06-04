@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule, Routes } from '@angular/router';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductComponent } from './pages/product/product.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -23,7 +22,7 @@ import { UpdateCategoryPageComponent } from './admin/update-category-page/update
 import { LayoutPageComponent } from './layout/layout-page/layout-page.component';
 import { CategoryItemComponent } from './admin/category-item/category-item.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-import { ProductItemComponent } from './component/product-item/product-item.component';
+import { ProductItemComponent } from './admin/product-item/product-item.component';
 
 
 
@@ -45,7 +44,7 @@ import { ProductItemComponent } from './component/product-item/product-item.comp
     UpdateCategoryPageComponent,
     LayoutPageComponent,
     CategoryItemComponent,
-    ProductItemComponent,
+    ProductItemComponent
     
   ],
   imports: [
