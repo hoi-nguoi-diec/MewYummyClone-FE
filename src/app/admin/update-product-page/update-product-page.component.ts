@@ -11,7 +11,11 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class UpdateProductPageComponent {
   product!: IProduct;
-  
+  productForm = this.fb.group({
+    name: [''],
+    price: 0,
+    description: [''],
+  });
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
@@ -20,9 +24,9 @@ export class UpdateProductPageComponent {
   ) {
     this.route.paramMap.subscribe((param) => {
       const _id = param.get('id');
+
       this.productService.getOne(_id).subscribe((product) => {
         this.product = product;
-
         this.productForm.patchValue({
           name: product.data?.name,
           price: product.data?.price,
@@ -31,20 +35,16 @@ export class UpdateProductPageComponent {
       });
     });
   }
-  productForm = this.fb.group({
-    name: [''],
-    price: 0,
-    description: [''],
-  });
   onHandleEdit() {
     if (this.productForm.valid) {
-      const product: IProduct = {
-        _id: this.product._id,
+      const updatedProduct: IProduct = {
+        _id: this.product.data?._id,
         name: this.productForm.value.name || '',
         price: this.productForm.value.price || 0,
         description: this.productForm.value.description || '',
       };
-      this.productService.editProduct(product).subscribe((data) => {
+
+      this.productService.editProduct(updatedProduct).subscribe((data) => {
         console.log(data);
         this.router.navigate(['admin/products']);
       });

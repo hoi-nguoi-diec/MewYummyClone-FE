@@ -7,7 +7,9 @@ export interface IProduct {
     description?:string
 }
 export interface IData{
+    _id?: string,
     name?: string,
     price?: number,
     description?:string
+    image?:string,
 }

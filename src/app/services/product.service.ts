@@ -24,6 +24,6 @@ export class ProductService {
     return this.http.post<IProduct>(`${this.API_URL}/products`, product)
   }
   editProduct(product: IProduct): Observable<IProduct> {
-    return this.http.put<IProduct>(`${this.API_URL}/${product._id}`, product)
+    return this.http.put<IProduct>(`${this.API_URL}/products/${product._id}`, product)
   }
 }
