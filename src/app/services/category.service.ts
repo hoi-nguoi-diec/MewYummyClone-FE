@@ -23,7 +23,7 @@ export class CategoryService {
   addCategories(categories: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(`${this.API_URL}/categories`, categories);
   }
-  updatecategories(categories: ICategory): Observable<ICategory> {
+  updateCategories(categories: ICategory): Observable<ICategory> {
     return this.http.put<ICategory>(`${this.API_URL}/categories/${categories._id}`, categories);
   }
 }

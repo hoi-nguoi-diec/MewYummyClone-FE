@@ -36,7 +36,7 @@ export class UpdateCategoryPageComponent {
         _id: this.category._id,
         name: this.categoryForm.value.name || ""
       }
-      this.categoryService.updatecategories(category).subscribe(data =>{
+      this.categoryService.updateCategories(category).subscribe(data =>{
         console.log(data);
         this.routers.navigate(["admin/categories"])
       })
