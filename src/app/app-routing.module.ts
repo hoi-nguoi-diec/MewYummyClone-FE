@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent},
     { path: 'products', component: ProductPageComponent},
     { path: 'products/add', component: AddProductPageComponent},
-    { path: 'products/edit/:id', component: UpdateProductPageComponent},
+    { path: 'products/:id/edit', component: UpdateProductPageComponent},
     { path: 'categories', component: CategoryPageComponent},
     { path: 'categories/add', component: AddCategoryPageComponent},
     { path: 'categories/:id/edit', component: UpdateCategoryPageComponent},

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProduct } from '../interface/product';
 @Injectable({
@@ -7,15 +7,23 @@ import { IProduct } from '../interface/product';
 })
 export class ProductService {
 
-  constructor(private http:HttpClient) { }
-  API_URL: string  = 'http://localhost:8080/api';
-  getProducts(): Observable<IProduct[]>{
+  constructor(private http: HttpClient) { }
+  API_URL: string = 'http://localhost:8080/api';
+  getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`${this.API_URL}/products`)
   }
-  deleteProduct(_id: number| string): Observable<IProduct>{
-    return this.http.delete<IProduct>(`${this.API_URL}/products/`+_id)
+
+  getOne(_id: any): Observable<IProduct> {
+    return this.http.get<IProduct>(`${this.API_URL}/products/` + _id)
   }
-  addProduct(product:IProduct):Observable<IProduct>{
+
+  deleteProduct(_id: number | string): Observable<IProduct> {
+    return this.http.delete<IProduct>(`${this.API_URL}/products/` + _id)
+  }
+  addProduct(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(`${this.API_URL}/products`, product)
+  }
+  editProduct(product: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(`${this.API_URL}/${product._id}`, product)
   }
 }
