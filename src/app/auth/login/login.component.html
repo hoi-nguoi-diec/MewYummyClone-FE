@@ -1,61 +1,46 @@
-<section class="register-layout d-flex align-items-center justify-content-center ">
+<section class="register-layout d-flex align-items-center justify-content-center">
     <div class="box_log position-relative">
-    
-            <form class="p-3 text-bg-success">
-                <h2 class="font-weight-bold m-0 whites text-center">Đăng ký tài khoảnnn</h2>
-                <ul class="breadcrumb d-flex justify-content-center pl-0 pr-0 mb-2 w-100 small">
-                    <li class="home">
-                        <a href="/" title="Mew Yummy">Trang chủ</a>
-                        <span class="slash-divider ml-1 mr-1">/</span>
-                    </li>
-                    <li>Đăng ký tài khoản</li>
-                </ul>
-                <div class="form-signup text-danger mb-2 text-center">
-                </div>
-                <div class="form-group">
-                    <label for="firstName" class="d-none col-form-label">Tên<span
-                            class="text-danger">*</span></label>
-                    <input type="text" placeholder="Tên" class="border-mew mew-control" name="firstName"
-                        required="">
-                </div>
-                <div class="form-group">
-                    <label for="lastName" class="d-none col-form-label">Họ<span class="text-danger">*</span></label>
-                    <input type="text" placeholder="Họ" class="border-mew mew-control" name="lastName" required="">
-                </div>
-                <div class="form-group">
-                    <label for="Phone" class="d-none col-form-label">Số điện thoại<span
-                            class="text-danger">*</span></label>
-                    <input type="text" placeholder="Số điện thoại" pattern="\d+" class="border-mew mew-control"
-                        name="Phone" required="">
-                </div>
 
-                <div class="form-group">
-                    <label for="email" class="d-none col-form-label">E-mail<span
-                            class="text-danger">*</span></label>
-                    <input type="email" placeholder="E-mail" class="border-mew mew-control"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" required="">
-                </div>
-                <div class="form-group">
-                    <label for="create_password" class="d-none col-form-label">Mật khẩu<span
-                            class="text-danger">*</span></label>
-                    <input type="password" placeholder="Mật khẩu" class="border-mew mew-control" name="password"
-                        required="">
-                </div>
-                <div class="form-group d-flex justify-content-center align-items-center mb-2">
-                    <button type="submit" class="btn btn-primary border-mew mew-control lk font-weight-bold"
-                        style="max-width: 100%;">Đăng ký</button>
-                </div>
-            </form>
-         
-            <div class="new-users mt-4">
-                <div class="content">
-                    <div class="buttons-set text-center">
-                        <a href="#" 
-                            class="btn btn-primary border-mew mew-control font-weight-bold mb-2">Đăng nhập</a>
-                        <button class="btn btn-primary border-mew mew-control font-weight-bold"
-                            >Quay về trang chủ</button>
-                    </div>
-                </div>
+        <form class="p-3 text-bg-success rounded" >
+            <h2 class="font-weight-bold m-0 whites text-center">Đăng nhập tài khoản</h2>
+            <ul class="breadcrumb d-flex justify-content-center pl-0 pr-0 mb-2 w-100 small">
+                <li class="home">
+                    <a href="/index">Trang chủ</a>
+                    <span class="slash-divider ml-1 mr-1">/</span>
+                </li>
+                <li>Đăng nhập</li>
+            </ul>
+
+
+            <div class="form-group">
+                <label class="col-form-label px-2">E-mail</label><br>
+                <input type="email" class="w-100 rounded border border-success" name="email" formControlName="email">
+              
+
+                <!-- <div *ngIf="formSignup.get('email')?.hasError('exists')" class="text-danger">Email already exists</div> -->
+            </div>
+            
+            <div class="form-group">
+                <label class="col-form-label px-2">PassWord</label><br>
+                <input type="password" class="w-100 rounded border border-success" formControlName="password">
+              
+            </div>
+
+      
+            <div class="form-group d-flex justify-content-center align-items-center my-3">
+                <button type="submit" class="btn btn-primary font-weight-bold" style="max-width: 100%;">Đăng nhập</button>
+            </div>
+
+            <div class="buttons-set text-center d-flex mx-2">
+                <a href="#" class="mr-1 mx-2 ">Đăng nhập</a>
+                <a routerLink="/index" class="">Quay về trang chủ</a>
+            </div>
+        </form>
+
+        <div class="new-users mt-4">
+            <div class="">
+
             </div>
         </div>
+    </div>
 </section>

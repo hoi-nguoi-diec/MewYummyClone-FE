@@ -10,6 +10,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'cart', component:AddToCartComponent},
     {path:'products1', component:ProductDetailComponent},
+    {path: 'signup', component:SignupComponent}
   ]},
  
   { path: 'admin', component: LayoutAdminComponent, children: [
@@ -38,6 +39,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AddToCartComponent } from './component/add-to-cart/add-to-cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 @NgModule({
