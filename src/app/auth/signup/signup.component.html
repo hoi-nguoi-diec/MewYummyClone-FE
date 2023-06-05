@@ -1,0 +1,73 @@
+<section class="register-layout d-flex align-items-center justify-content-center">
+    <div class="box_log position-relative">
+
+        <form class="p-3 text-bg-success rounded" [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()">
+            <h2 class="font-weight-bold m-0 whites text-center">Đăng ký tài khoản</h2>
+            <ul class="breadcrumb d-flex justify-content-center pl-0 pr-0 mb-2 w-100 small">
+                <li class="home">
+                    <a href="/index">Trang chủ</a>
+                    <span class="slash-divider ml-1 mr-1">/</span>
+                </li>
+                <li>Đăng ký tài khoản</li>
+            </ul>
+
+            <div class="form-group">
+                <label class=" col-form-label pr-4">Name</label><br>
+                <input type="text" class="w-100 rounded border border-success" formControlName="name">
+                <div *ngIf="
+                    formSignup.get('name')?.hasError('required')  &&
+                    (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)" class="text-danger">Name is
+                    Required</div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label px-2">E-mail</label><br>
+                <input type="email" class="w-100 rounded border border-success" name="email" formControlName="email">
+                <div *ngIf="
+                      formSignup.get('email')?.hasError('required') &&
+                      (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)" class="text-danger">Email
+                    is Required</div>
+                <div *ngIf="
+                      formSignup.get('email')?.hasError('email') &&
+                      (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)" class="text-danger">Invalid
+                    email</div>
+
+                <div *ngIf="formSignup.get('email')?.hasError('exists')" class="text-danger">Email already exists</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-form-label px-2">PassWord</label><br>
+                <input type="password" class="w-100 rounded border border-success" formControlName="password">
+                <div *ngIf="
+                    formSignup.get('password')?.hasError('required') &&
+                    (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)" class="text-danger">
+                    Password is Required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label px-2">ConfirmPassWord</label><br>
+                <input type="password" class="w-100 rounded border border-success" formControlName="confirmPassword">
+                <div *ngIf="
+                  formSignup.hasError('mismatch') &&
+                  (formSignup.get('confirmPassword')?.touched ||
+                    formSignup.get('confirmPassword')?.dirty)" class="text-danger"
+                    >Password không trùng nhau</div>
+            </div>
+            <div class="form-group d-flex justify-content-center align-items-center my-3">
+                <button type="submit" class="btn btn-primary font-weight-bold" style="max-width: 100%;">Đăng ký</button>
+            </div>
+
+            <div class="buttons-set text-center d-flex mx-2">
+                <a href="#" class="mr-1 mx-2 ">Đăng nhập</a>
+                <a routerLink="/index" class="">Quay về trang chủ</a>
+            </div>
+        </form>
+
+        <div class="new-users mt-4">
+            <div class="">
+
+            </div>
+        </div>
+    </div>
+</section>
