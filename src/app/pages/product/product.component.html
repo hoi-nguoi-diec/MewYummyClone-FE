@@ -64,102 +64,15 @@
 
                     <div class="collection">
                         <div class="position-relative mt-4 mb-4">
-                            <div class="row slider-items">
-                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 product-grid-item-lm mb-3 ">
-                                    <div class="product-item position-relative p-2 border rounded">
-                                        <div class="sale-label sale-top-right position-absolute">
-                                            <span
-                                                class="font-weight-bold text-white p-2 text-bg-danger rounded">-20%</span>
-                                        </div>
-                                        <a href="#">
-                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/untitleddesign8-fe55934b-c5f4-4408-bcd0-febaadacd8c4.jpg?v=1645085200483"
-                                                alt="" width="100%">
-                                        </a>
-                                        <div class="mt-1 position-relative ">
-                                            <h3 class="hovertext">
-                                                <a href="#" class="text-decoration-none fs-5 text-dark">Test combo
-                                                    Sirius</a>
-                                            </h3>
-                                            <div class="mb-1">
-                                                <span
-                                                    class="special-price font-weight-bold text-danger">1.200.000₫</span>
-                                                <del class="old-price text-black-50 "> 1.500.000₫</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 product-grid-item-lm mb-3 ">
-                                    <div class="product-item position-relative p-2 border rounded">
-                                        <div class="sale-label sale-top-right position-absolute">
-                                            <span
-                                                class="font-weight-bold text-white p-2 text-bg-danger rounded">-20%</span>
-                                        </div>
-                                        <a href="#">
-                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/combo-an-khang.jpg?v=1641401523777"
-                                                alt="" width="100%">
-                                        </a>
-                                        <div class="mt-1 position-relative ">
-                                            <h3 class="hovertext">
-                                                <a href="#" class="text-decoration-none fs-5 text-dark">combo An
-                                                    Khang</a>
-                                            </h3>
-                                            <div class="mb-1">
-                                                <span class="special-price font-weight-bold text-danger">699.000₫</span>
-                                                <del class="old-price text-black-50"> 750.000₫</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 product-grid-item-lm mb-3 ">
-                                    <div class="product-item position-relative p-2 border rounded">
-                                        <div class="sale-label sale-top-right position-absolute">
-                                            <span
-                                                class="font-weight-bold text-white p-2 text-bg-danger rounded">-20%</span>
-                                        </div>
-                                        <a href="#">
-                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/combo-thinh-vuong.jpg?v=1641401485353"
-                                                alt="" width="100%">
-                                        </a>
-                                        <div class="mt-1 position-relative ">
-                                            <h3 class="hovertext">
-                                                <a href="#" class="text-decoration-none fs-5 text-dark">Combo Thịnh
-                                                    Vượng</a>
-                                            </h3>
-                                            <div class="mb-1">
-                                                <span class="special-price font-weight-bold text-danger">299.000₫</span>
-                                                <del class="old-price text-black-50 "> 350.000₫</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 product-grid-item-lm mb-3 ">
-                                    <div class="product-item position-relative p-2 border rounded">
-                                        <div class="sale-label sale-top-right position-absolute">
-                                            <span
-                                                class="font-weight-bold text-white p-2 text-bg-danger rounded">-20%</span>
-                                        </div>
-                                        <a href="#">
-                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/combo-nhu-y.jpg?v=1641401445810"
-                                                alt="" width="100%">
-                                        </a>
-                                        <div class="mt-1 position-relative ">
-                                            <h3 class="hovertext">
-                                                <a href="#" class="text-decoration-none fs-5 text-dark">Combo Thịnh
-                                                    Vượng</a>
-                                            </h3>
-                                            <div class="mb-1">
-                                                <span
-                                                    class="special-price font-weight-bold text-danger">1.299.000₫</span>
-                                                <del class="old-price text-black-50 "> 1.500.000₫</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                            
+                            <div  class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 product-grid-item-lm mb-3 row row-cols-4 w-full" >
+                                <div
+                                app-product-item-index 
+                                *ngFor="let product of products | paginate: {itemsPerPage: 10, currentPage: p };let i = index"
+                                [product]="product"
+                                class="product-item position-relative p-2 border rounded mx-2 my-2 w-200"
+                                ></div>
                             </div>
-
                             <!-- Phân trang -->
 
                         </div>

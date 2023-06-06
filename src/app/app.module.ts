@@ -24,6 +24,7 @@ import { LayoutPageComponent } from './layout/layout-page/layout-page.component'
 import { CategoryItemComponent } from './admin/category-item/category-item.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ProductItemComponent } from './component/product-item/product-item.component';
+import { ProductItemIndexComponent } from './component/product-item-index/product-item-index.component';
 
 
 
@@ -46,6 +47,7 @@ import { ProductItemComponent } from './component/product-item/product-item.comp
     LayoutPageComponent,
     CategoryItemComponent,
     ProductItemComponent,
+    ProductItemIndexComponent,
     
   ],
   imports: [
