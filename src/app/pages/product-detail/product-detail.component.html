@@ -1,21 +1,16 @@
-<div class="container">
+<div class="container" *ngIf="product">
     <hr>
-    <p class="fs-2 fw-bold">COMBO AN KHANG</p>
+    <p class="fs-2 fw-bold">{{product.data?.name}}</p>
     <section class="row py-3 grid ">
         <div class="col">
             <div>
-                <img src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/combo-an-khang.jpg?v=1641401523777"
-                    width="600px" height="600px" class="rounded-2">
+                <img src="{{product.data?.image}}" width="600px" height="600px" class="rounded-2">
             </div>
             <div class="py-3">
-                <img src="https://bizweb.dktcdn.net/thumb/compact/100/434/011/products/combo-an-khang.jpg?v=1641401523777"
-                    alt="" width="100px" height="100px" class="me-2 rounded-2">
-                <img src="https://bizweb.dktcdn.net/thumb/compact/100/434/011/products/3-05736-1635163843-a5744626-f5f1-4ffe-aa26-e314a6c9328b.jpg?v=1641401551657"
-                    alt="" width="100px" height="100px" class="me-2 rounded-2">
-                <img src="https://bizweb.dktcdn.net/thumb/compact/100/434/011/products/6-73706-1635163956-9e82aefc-eaae-498d-b7cc-1a8edf2867ad.jpg?v=1641401552370"
-                    alt="" width="100px" height="100px" class="me-2 rounded-2">
-                <img src="https://bizweb.dktcdn.net/thumb/compact/100/434/011/products/22-46847-1635164711-3eb2744c-a84a-4bae-b374-43c22aa067f1.jpg?v=1641401552943"
-                    alt="" width="100px" height="100px" class="me-2 rounded-2">
+                <img src="{{product.data?.image}}" alt="" width="100px" height="100px" class="me-2 rounded-2">
+                <img src="{{product.data?.image}}" alt="" width="100px" height="100px" class="me-2 rounded-2">
+                <img src="{{product.data?.image}}" alt="" width="100px" height="100px" class="me-2 rounded-2">
+                <img src="{{product.data?.image}}" alt="" width="100px" height="100px" class="me-2 rounded-2">
             </div>
         </div>
 
@@ -26,14 +21,15 @@
             <hr>
             <p class="fs-4 ">Đang cập nhật</p>
             <p class="my-5">
-                <span class="fs-1 fw-bold text-success ms-3 me-5">690.000<span
+                <span class="fs-1 fw-bold text-success ms-3 me-5">{{product.data?.price}}<span
                         class="text-decoration-underline">đ</span></span>
                 <span class="text-decoration-line-through fw-bold fs-5 text-secondary">750.000<span
                         class="text-decoration-underline">đ</span></span>
             </p>
-            <p class="fs-4">Số lượng <button class="btn btn-outline-success px-3 ms-4 me-3 ">-</button><button
-                    class="btn btn-outline-success px-3 me-3 ">+</button> <input type="number"
-                    class="form-control-sm py-2 border border-success"></p>
+            <p class="fs-4">Số lượng <button class="btn btn-outline-success px-3 ms-4 me-3 ">-</button>
+                <button class="btn btn-outline-success px-3 me-3 ">+</button>
+                <input type="number" class="form-control-sm py-2 border border-success">
+            </p>
             <div class="py-2">
                 <button type="button" class="btn btn-success px-4 py-2 fs-4 fw-semibold me-4 ">
                     <i class="bi bi-cart4"></i>
@@ -51,7 +47,7 @@
         <p class="fs-2 fw-bold">THÔNG TIN CHI TIẾT</p>
         <hr>
         <div class="fs-5">
-            Mew Mech – Thương hiệu keycap Artisan được sản xuất thủ công từng chiếc một. Những bạn trẻ thể hiện niềm đam mê mãnh liệt của họ với keycap dành cho bàn phím cơ nói riêng và nghệ thuật nói chung. Các sản phẩm keycap thủ công đến từ Mew Mech mang trong mình vẻ đẹp độc đáo giúp tô điểm bàn phím cơ của bạn.
+            <!-- Mew Mech – Thương hiệu keycap Artisan được sản xuất thủ công từng chiếc một. Những bạn trẻ thể hiện niềm đam mê mãnh liệt của họ với keycap dành cho bàn phím cơ nói riêng và nghệ thuật nói chung. Các sản phẩm keycap thủ công đến từ Mew Mech mang trong mình vẻ đẹp độc đáo giúp tô điểm bàn phím cơ của bạn.
             <ul class="pt-3 fst-italic">
                 <li>Sáng tác nghệ thuật CONG VU</li>
                 <li>Một trong dòng sưu tập Sirius</li>
@@ -60,7 +56,7 @@
             <ol class="fst-italic">
                 <li>Có hộp ARTISAN đi kèm</li>
                 <li>Có ngay 1 cơ hội nhận quà ngẫu nhiên may mắn vào livestream cuối tuần cùng tác giả.</li>
-            </ol>
+            </ol> -->{{product.data?.description}}
         </div>
     </section>
 </div>

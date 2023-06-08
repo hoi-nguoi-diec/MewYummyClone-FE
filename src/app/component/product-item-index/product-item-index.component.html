@@ -1,12 +1,13 @@
+
 <div class="sale-label sale-top-right position-absolute">
     <span class="font-weight-bold text-white p-2 text-bg-danger rounded">-20%</span>
 </div>
-<a href="#">
+<a routerLink="{{product._id}}">
     <img src="{{product.image}}" alt="" width="100%">
 </a>
 <div class="mt-1 position-relative ">
     <h3 class="hovertext">
-        <a href="#" class="text-decoration-none fs-5 text-dark">{{product.name}}</a>
+        <a routerLink="{{product._id}}" class="text-decoration-none fs-5 text-dark">{{product.name}}</a>
     </h3>
     <div class="mb-1">
         <span class="special-price font-weight-bold text-danger">{{product.price}}</span>

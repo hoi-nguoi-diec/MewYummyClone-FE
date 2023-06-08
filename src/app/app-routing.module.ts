@@ -9,7 +9,7 @@ const routes: Routes = [
     {path: 'products' , component: ProductComponent},
     {path: 'login', component: LoginComponent},
     {path: 'cart', component:AddToCartComponent},
-    {path:'products1', component:ProductDetailComponent},
+    {path:'products/:id', component:ProductDetailComponent},
   ]},
  
   { path: 'admin', component: LayoutAdminComponent, children: [
