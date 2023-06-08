@@ -7,10 +7,11 @@ const routes: Routes = [
     {path: '', redirectTo: 'index', pathMatch: 'full'},
     {path: 'index', component: IndexComponent },
     {path: 'products' , component: ProductComponent},
+    {path: 'products/:id', component:ProductDetailComponent},
     {path: 'login', component: LoginComponent},
     {path: 'cart', component:AddToCartComponent},
-    {path:'products1', component:ProductDetailComponent},
-    {path: 'signup', component:SignupComponent}
+    {path: 'signup', component:SignupComponent},
+    
   ]},
  
   { path: 'admin', component: LayoutAdminComponent, children: [
