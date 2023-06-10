@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ProductItemComponent } from './component/product-item/product-item.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ProductItemIndexComponent } from './component/product-item-index/product-item-index.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 
@@ -61,7 +62,11 @@ import { ProductItemIndexComponent } from './component/product-item-index/produc
     FormsModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

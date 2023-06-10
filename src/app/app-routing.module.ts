@@ -14,7 +14,7 @@ const routes: Routes = [
     
   ]},
  
-  { path: 'admin', component: LayoutAdminComponent, children: [
+  { path: 'admin', component: LayoutAdminComponent, canActivate: [AuthGuard], children: [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     { path: 'dashboard', component: DashboardComponent},
     { path: 'products', component: ProductPageComponent},
@@ -41,6 +41,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AddToCartComponent } from './component/add-to-cart/add-to-cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
