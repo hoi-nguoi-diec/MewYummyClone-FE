@@ -18,4 +18,7 @@ export class AuthService {
     return this.http.post(`${this.API_URL}/signin`, user);
   }
  
+  isAuthenticated(): any {
+    return JSON.parse(localStorage.getItem('credential')!) || {};
+  }
 }
