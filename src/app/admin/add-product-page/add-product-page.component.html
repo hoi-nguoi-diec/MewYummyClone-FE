@@ -18,10 +18,9 @@
       </div>
       <div class="mb-3">
         <label class="form-label">Category</label>
-        <select name="category" id="category" class="mx-2">
-          <option value="cate.id">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
+        <select formControlName="category" class="mx-2 form-select">
+          <option value="">--Select a category--</option>
+          <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
         </select>
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>

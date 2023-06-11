@@ -4,6 +4,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
+// import { CloudinaryModule } from '@cloudinary/angular-5.x';
+// import { CloudinaryConfiguration, provideCloudinary } from '@cloudinary/angular-5.x';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './pages/product/product.component';
@@ -61,6 +63,7 @@ import { AuthInterceptor } from './auth.interceptor';
     ReactiveFormsModule, 
     FormsModule,
     NgxPaginationModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
