@@ -132,10 +132,10 @@
             <div class="d-flex align-items-center mt-4 position-relative">
                 <img class="w-25 rounded " src="https://bizweb.dktcdn.net/100/434/011/themes/845632/assets/bn_pr_3.png?1684494777622" alt="">
                 <div class="row mb-4">
-                    <div class="col ms-5 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                        <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-6.jpg?v=1640271390120" alt=""><br>
-                        <span class="fw-semibold">Thăn Lưng Bò Mỹ, Black ..</span><br>
-                        <span class="text-danger fw-semibold">450.000đ</span> <del class="text-secondary text-13 ps-2">500.000đ</del>
+                    <div class="col ms-5 border border-secondary-50 pt-4 pb-2 rounded position-relative" *ngFor="let product of products">
+                        <img class="w-100" [src]="product.image" alt=""><br>
+                        <span class="fw-semibold">{{product.name}}</span><br>
+                        <span class="text-danger fw-semibold">{{product.price | currency}}</span> <del class="text-secondary text-13 ps-2">500.000đ</del>
                         <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 10%</a>
                     </div>
                     <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded">

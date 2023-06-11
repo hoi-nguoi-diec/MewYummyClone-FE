@@ -26,4 +26,8 @@ export class ProductService {
   editProduct(product: IProduct): Observable<IProduct> {
     return this.http.put<IProduct>(`${this.API_URL}/products/${product._id}`, product)
   }
+
+  getProductsByCategory(categoryId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/products?categoryId=${categoryId}`);
+  }
 }
