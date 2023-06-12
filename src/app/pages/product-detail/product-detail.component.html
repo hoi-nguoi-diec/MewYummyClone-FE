@@ -26,15 +26,16 @@
                 <span class="text-decoration-line-through fw-bold fs-5 text-secondary">750.000<span
                         class="text-decoration-underline">đ</span></span>
             </p>
-            <p class="fs-4">Số lượng <button class="btn btn-outline-success px-3 ms-4 me-3 ">-</button>
-                <button class="btn btn-outline-success px-3 me-3 ">+</button>
-                <input type="number" class="form-control-sm py-2 border border-success">
+            <p class="fs-4">Số lượng
+                <button class="btn btn-outline-success px-3 ms-4 me-3 " (click)="decrease()">-</button>
+                <button class="btn btn-outline-success px-3 me-3 " (click)="increase()">+</button>
+                <input type="number" class="form-control-sm py-2 border border-success" [(ngModel)]="quantity">
             </p>
             <div class="py-2">
-                <button type="button" class="btn btn-success px-4 py-2 fs-4 fw-semibold me-4 ">
+                <a class="btn btn-success px-4 py-2 fs-4 fw-semibold me-4 ">
                     <i class="bi bi-cart4"></i>
-                    Thêm vào giỏ hàng</button>
-                <button class="btn btn-warning px-4 py-2 fs-4 fw-semibold text-white">Mua ngay</button>
+                    Thêm vào giỏ hàng</a>
+                <a class="btn btn-warning px-4 py-2 fs-4 fw-semibold text-white">Mua ngay</a>
             </div>
             <div
                 class="text-center border rounded-3 bg-warning py-2 mt-4 d-flex align-content-center justify-content-center">

@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailComponent {
   @Input() product!:IProduct
+  quantity:number = 0
   constructor (private productService:ProductService,
     private route:ActivatedRoute){
       this.route.paramMap.subscribe(params=>{
@@ -20,5 +21,13 @@ export class ProductDetailComponent {
           
         })
       })
+  }
+  increase(){
+    this.quantity++;
+  }
+  decrease(){
+    if(this.quantity>0){
+      this.quantity--
+    }
   }
 }

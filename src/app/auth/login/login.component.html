@@ -3,9 +3,9 @@
 
         <form class="p-3 text-bg-success rounded" [formGroup]="formSignin" (ngSubmit)="onHandleSubmit()">
             <h2 class="font-weight-bold m-0 whites text-center">Đăng nhập tài khoản</h2>
-            <ul class="breadcrumb d-flex justify-content-center pl-0 pr-0 mb-2 w-100 small">
+            <ul class="breadcrumb d-flex justify-content-center pl-0 pr-0 my-2 w-100 small">
                 <li class="home">
-                    <a href="/index">Trang chủ</a>
+                    <a href="/index" class="text-white no-underline">Trang chủ</a>
                     <span class="slash-divider ml-1 mr-1">/</span>
                 </li>
                 <li>Đăng nhập</li>
@@ -13,7 +13,7 @@
 
 
             <div class="form-group">
-                <label class="col-form-label px-2">E-mail</label><br>
+                <label class="col-form-label pr-4">E-mail</label><br>
                 <input type="email" class="w-100 rounded border border-success" name="email" formControlName="email">
 
 
@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                <label class="col-form-label px-2">PassWord</label><br>
+                <label class="col-form-label pr-4">Password</label><br>
                 <input type="password" class="w-100 rounded border border-success" formControlName="password">
 
             </div>
@@ -42,15 +42,10 @@
             </div>
 
             <div class="buttons-set text-center d-flex mx-2">
-                <a href="#" class="mr-1 mx-2 ">Đăng nhập</a>
-                <a routerLink="/index" class="">Quay về trang chủ</a>
+                Chưa có tài khoản?<a href="/signup" class="mr-1 mx-2 text-white no-underline">Đăng ký</a>
             </div>
         </form>
 
-        <div class="new-users mt-4">
-            <div class="">
-
-            </div>
-        </div>
+        <br>
     </div>
 </section>
