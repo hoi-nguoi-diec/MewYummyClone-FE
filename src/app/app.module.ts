@@ -24,6 +24,7 @@ import { CategoryItemComponent } from './admin/category-item/category-item.compo
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ProductItemComponent } from './component/product-item/product-item.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { IndexItemComponent } from './pages/index-item/index-item.component';
 
 
 
@@ -47,6 +48,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     CategoryItemComponent,
     ProductItemComponent,
     SignupComponent,
+    IndexItemComponent,
     
   ],
   imports: [
