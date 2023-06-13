@@ -1,27 +1,45 @@
 <h1 class="mb-5">Add product</h1>
 <form [formGroup]="productForm" class="form-group" (ngSubmit)="onHandleAdd()">
+  <div class="form-group">
     <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" formControlName="name">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Price</label>
-        <input type="number" class="form-control" formControlName="price">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Description</label>
-        <input type="text" class="form-control" formControlName="description">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Image</label>
-        <input type="file" class="form-control" (change)="onImageSelected($event)" accept="image/*">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Category</label>
-        <select formControlName="category" class="mx-2 form-select">
-          <option value="">--Select a category--</option>
-          <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
-        </select>
-      </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="text-danger" *ngIf="
+                  productForm.get('name')?.hasError('required') &&
+                  (productForm.get('name')?.touched || productForm.get('name')?.dirty)">
+      Name is Required
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="number" class="form-control" formControlName="price">
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <input type="text" class="form-control" formControlName="description">
+    </div>
+    <div class="text-danger" *ngIf="
+                  productForm.get('description')?.hasError('required') &&
+                  (productForm.get('description')?.touched || productForm.get('description')?.dirty)">
+      description is Required
+    </div>
+  </div>
+
+
+  <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" class="form-control" (change)="onImageSelected($event)" accept="image/*">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Category</label>
+    <select formControlName="category" class="mx-2 form-select">
+      <option value="">--Select a category--</option>
+      <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+    </select>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

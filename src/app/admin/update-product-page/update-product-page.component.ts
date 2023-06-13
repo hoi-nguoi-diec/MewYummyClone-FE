@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IData, IProduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/services/product.service';
@@ -12,9 +12,9 @@ import { ProductService } from 'src/app/services/product.service';
 export class UpdateProductPageComponent {
   product!: IProduct;
   productForm = this.fb.group({
-    name: [''],
+    name: ['', [Validators.required]],
     price: 0,
-    description: [''],
+    description: ['', [Validators.required]],
   });
   constructor(
     private fb: FormBuilder,

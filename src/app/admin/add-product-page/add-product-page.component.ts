@@ -33,9 +33,9 @@ export class AddProductPageComponent {
       });
     }
   productForm = this.fb.group({
-    name: [''],
+    name: ['', [Validators.required]],
     price: 0,
-    description: [''],
+    description: ['', [Validators.required]],
     image: ''
   })
   onHandleAdd(){
