@@ -28,6 +28,7 @@ import { ProductItemComponent } from './component/product-item/product-item.comp
 import { SignupComponent } from './auth/signup/signup.component';
 import { ProductItemIndexComponent } from './component/product-item-index/product-item-index.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { IndexItemComponent } from './pages/index-item/index-item.component';
 
 
 
@@ -52,6 +53,7 @@ import { AuthInterceptor } from './auth.interceptor';
     ProductItemComponent,
     SignupComponent,
     ProductItemIndexComponent,
+    IndexItemComponent,
     
   ],
   imports: [

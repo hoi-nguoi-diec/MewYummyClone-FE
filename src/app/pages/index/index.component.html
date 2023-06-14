@@ -126,102 +126,60 @@
         <div class="container ">
             <img class="w-100 rounded" src="https://bizweb.dktcdn.net/100/434/011/themes/845632/assets/banner4_1.jpg?1684494777622" alt="">
         </div>
-
+        <!-- <ul >
+            <li *ngFor="let product of products " >
+                <span *ngIf="product.categoryId === '64758cbafa762b2092bfa2a5'"> {{ product.name }}</span>
+             
+            </li>
+          </ul> -->
         <div class="container mt-5 mb-5" >
             <h3>THỊT BÒ NHẬP KHẨU</h3>
             <div class="d-flex align-items-center mt-4 position-relative">
                 <img class="w-25 rounded " src="https://bizweb.dktcdn.net/100/434/011/themes/845632/assets/bn_pr_3.png?1684494777622" alt="">
-                <div class="row mb-4">
-                    <div class="col ms-5 border border-secondary-50 pt-4 pb-2 rounded position-relative" *ngFor="let product of products">
-                        <img class="w-100" [src]="product.image" alt=""><br>
+                <div class=" mb-4" *ngFor="let product of products | paginate: {itemsPerPage: 13, currentPage: p }">
+                    <div class="ps-3 ms-3 h320 border border-secondary-50 pt-4 pb-2 rounded position-relative" *ngIf="product.categoryId === '64758cbafa762b2092bfa2a5'">
+                        <img class="w-100" src="{{product.image}}" alt=""><br>
                         <span class="fw-semibold">{{product.name}}</span><br>
-                        <span class="text-danger fw-semibold">{{product.price | currency}}</span> <del class="text-secondary text-13 ps-2">500.000đ</del>
+                        <span class="text-danger fw-semibold">{{product.price}}</span> <del class="text-secondary text-13 ps-2">500.000đ</del>
                         <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 10%</a>
                     </div>
-                    <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded">
-                        <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-3.jpg?v=1640271306387" alt=""><br>
-                        <span class="fw-semibold">Dẻ Sườn Bò Mỹ, Short Rib..</span><br>
-                        <span class="text-danger fw-semibold">205.000đ</span> 
-                    </div>
-                    <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded">
-                        <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-5.jpg?v=1640271349670" alt=""><br>
-                        <span class="fw-semibold">Sườn Bò Mỹ,Rib FinGer...</span><br>
-                        <span class="text-danger fw-semibold">259.000đ</span> 
-                    </div>
-                    <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                        <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-4.jpg?v=1640271260323" alt=""><br>
-                        <span class="fw-semibold ">Lõi Nạc Vai Bò Mỹ, Top Bl..</span><br>
-                        <span class="text-danger fw-semibold">194.000đ</span> <del class="text-secondary text-13 ps-2">250.000đ</del>
-                        <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 22%</a>
-                    </div><br>
-                   
                 </div>
-                <a class="text-decoration-none bg-success text-white  rounded-4 px-2   position-absolute bottom-0 postion"  href="">Xem thêm</a>
+                <!-- <a class="text-decoration-none bg-success text-white  rounded-4 px-2    position-absolute bottom-0 postion"  href="">Xem thêm</a> -->
             </div>
-           
+            <div class="position-absolute postion mt-3"><pagination-controls (pageChange)="p =$event"></pagination-controls></div>
             <div class="container margin-top  ">
                 <h3>HẢI SẢN TƯƠI</h3>
                 <div class="d-flex ">
-                    <div class="row mt-4">
-                        <div class="col me-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-4-223a1b44-308a-472d-9e2d-9235f67f9611.jpg?v=1640272077490" alt=""><br>
-                            <span class="fw-semibold">Ghẹ Xanh Sống</span><br>
-                            <span class="text-danger fw-semibold">350.000đ</span> 
+                    <div class=" mt-4" *ngFor="let product of products | paginate: {itemsPerPage: 10, currentPage: p2 }">
+                        <div class=" me-2 h-100 border ps-3  border-secondary-50 pt-4 pb-2 rounded " *ngIf="product.categoryId === '64758cd3fa762b2092bfa2a8'">
+                            <img class="w-100" src="{{product.image}}" alt=""><br>
+                            <span class="fw-semibold ">{{product.name}}</span><br>
+                            <span class="text-danger fw-semibold">{{product.price}}</span> 
                         </div>
-                        <div class="col me-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-1-5aa6bc92-507b-4bcb-8428-6a5d7934486d.jpg?v=1640272055477" alt=""><br>
-                            <span class="fw-semibold">Tôm Càng Xanh Sống </span><br>
-                            <span class="text-danger fw-semibold">340.000đ</span> <del class="text-secondary text-13 ps-2">440.000đ</del>
-                            <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 23%</a>
-                        </div>
-                        <div class="col me-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-3-a53482dc-54e0-4a15-b4cd-221c63ce11c8.jpg?v=1640272016053" alt=""><br>
-                            <span class="fw-semibold">Ngao Hai Cồi Sống</span><br>
-                            <span class="text-danger fw-semibold">130.000đ</span> 
-                        </div>
-                        <div class="col me-5 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/mewyummy-5-c4cfdbdc-d493-4f92-b9e2-a0c8880e0696.jpg?v=1640271995913" alt=""><br>
-                            <span class="fw-semibold">Bào Ngư Hàn Quốc Sống Lớn</span><br>
-                            <span class="text-danger fw-semibold">750.000đ</span>
-                        </div>
+                        
                     </div>
+                    
                     <img class="w-25 rounded mt-4" src="https://bizweb.dktcdn.net/100/434/011/themes/845632/assets/bn_pr_4.png?1684494777622" alt="">
                 </div>
+               <div class="position-absolute postion1 mt-3"> <pagination-controls (pageChange)="p2 =$event"></pagination-controls></div>
             </div>
 
             <div class="container margin-top mb-5">
                 <h3>RAU CỦ QUẢ</h3>
-                <div class="d-flex  mt-4 position-relative">
+                <div class="d-flex  mt-4 position-relative" >
                     <img class="w-25 rounded " src="https://bizweb.dktcdn.net/100/434/011/themes/845632/assets/bn_pr_5.png?1684494777622" alt="">
-                    <div class="row mb-5">
-                        <div class="col ms-5 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/2-75696-1635163634.jpg?v=1640273131000" alt=""><br>
-                            <span class="fw-semibold">Ớt Ngọt Đà Lạt</span><br>
-                            <span class="text-danger fw-semibold">35.000đ</span> 
+                    <div class=" mb-5" *ngFor="let product of products | paginate: {itemsPerPage: 10, currentPage: p }">
+                        <div class=" ms-2 h-100 ps-3 border border-secondary-50 pt-4 pb-2 rounded position-relative" *ngIf="product.categoryId === '64758ce2fa762b2092bfa2ae'">
+                            <img class="w-100" src="{{product.image}}" alt=""><br>
+                            <span class="fw-semibold ">{{product.name}}</span><br>
+                            <span class="text-danger fw-semibold">{{product.price}}</span> 
                         </div>
-                        <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/4-63105-1635163842.jpg?v=1640273076857" alt=""><br>
-                            <span class="fw-semibold">Hành Tây Củ</span><br>
-                            <span class="text-danger fw-semibold">15.000đ</span> <del class="text-secondary text-13 ps-2">35.000đ</del>
-                            <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 40%</a>
-                        </div>
-                        <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/5-68929-1635163955.jpg?v=1640273007370" alt=""><br>
-                            <span class="fw-semibold">Snack lá ngắn</span><br>
-                            <span class="text-danger fw-semibold">60.000đ</span>  <del class="text-secondary text-13 ps-2">70.000đ</del>
-                            <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 20%</a>
-                        </div>
-                        <div class="col ms-3 border border-secondary-50 pt-4 pb-2 rounded position-relative">
-                            <img class="w-100" src="https://bizweb.dktcdn.net/thumb/large/100/434/011/products/1-91737-1635163634.jpg?v=1640272919337" alt=""><br>
-                            <span class="fw-semibold ">Cam Vàng Không Hạt</span><br>
-                            <span class="text-danger fw-semibold">35.000đ</span> <del class="text-secondary text-13 ps-2">50.000đ</del>
-                            <a class="text-decoration-none bg-danger text-white ps-1 pe-1 rounded position-absolute top-0 end-0 mt-2 me-2 text-13 fw-semibold" href="">- 36%</a>
-                        </div><br>
-                       
                     </div>
-                    <a class="text-decoration-none bg-success text-white  rounded-4 px-2   position-absolute bottom-0 postion"  href="">Xem thêm</a>
+                    <!-- <a class="text-decoration-none bg-success text-white  rounded-4 px-2   position-absolute bottom-0 postion"  href="">Xem thêm</a> -->
                 </div>
+               <!-- <div class="position-absolute postion "> <pagination-controls (pageChange)="p =$event"></pagination-controls></div> -->
             </div>
+           
         </div>
 
 

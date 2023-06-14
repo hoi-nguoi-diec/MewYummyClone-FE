@@ -5,8 +5,7 @@ export interface IProduct {
     price?: number,
     image?:string,
     description?:string
-    categoryId?:string
-
+    categoryId?: string
 }
 export interface IData{
     _id?: string,
