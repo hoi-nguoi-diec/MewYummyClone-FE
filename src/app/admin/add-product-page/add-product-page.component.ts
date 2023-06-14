@@ -34,10 +34,17 @@ export class AddProductPageComponent {
     }
   productForm = this.fb.group({
     name: ['', [Validators.required]],
-    price: 0,
+    price: [0, [Validators.required,  this.priceValidator]],
     description: ['', [Validators.required]],
     image: ''
   })
+  priceValidator(control:any) {
+    const price = control.value;
+    if (price <= 0) {
+      return { priceError: true };
+    }
+    return null;
+  }
   onHandleAdd(){
     if (this.productForm.valid) {
       const product: IProduct = {
@@ -59,20 +66,4 @@ onImageSelected(event: any) {
   // }
 }
 
-// upload() {
-//   this.isUploading = true;
-//   const formData = new FormData();
-//   formData.append('file', this.selectedImage);
-//   formData.append('upload_preset', 'your_upload_preset_here');
-//   this.http.post('https://api.cloudinary.com/v1_1/your_cloud_name_here/image/upload', formData)
-//     .pipe(
-//       finalize(() => this.isUploading = false)
-//     )
-//     .subscribe(res => {
-//       this.imageUrl = res['secure_url'];
-//       this.productForm.patchValue({
-//         image: this.imageUrl
-//       });
-//     });
-// }
 }
